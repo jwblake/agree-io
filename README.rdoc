@@ -9,7 +9,7 @@ Agree.io: it's like shaking hands.
 
 == TO DO
 
-Monday:
+Sunday:
 * Download Dependencies
 * Build Application Locally
 * Create Jenkins Server
@@ -18,19 +18,19 @@ Monday:
 * Create SonarQube Server
 * Scan Code for Quality
 
-Tuesday:
+Monday:
 * Create Nexus Server
 * Create DTR
 * Deploy Application to DTR
 * Set Up PostgreSQL
 * Set up SMTP
 
-Wednesday:
+Tuesday:
 * Create K8s cluster with Terraform
 * Deploy K8s Cluster via Terraform
 * Deploy application to K8s cluster
 * Expose via LB
 
-Thursday:
+Wednesday:
 * Powerpoint
 * Pair programming exercise
