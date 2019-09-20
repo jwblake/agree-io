@@ -6,3 +6,31 @@ Agree.io: it's like shaking hands.
 
 * PostgreSQL
 * Mail for notification
+
+== TO DO
+
+Monday:
+* Download Dependencies
+* Build Application Locally
+* Create Jenkins Server
+* Build Application Remotely
+* Test Application Remotely 
+* Create SonarQube Server
+* Scan Code for Quality
+
+Tuesday:
+* Create Nexus Server
+* Create DTR
+* Deploy Application to DTR
+* Set Up PostgreSQL
+* Set up SMTP
+
+Wednesday:
+* Create K8s cluster with Terraform
+* Deploy K8s Cluster via Terraform
+* Deploy application to K8s cluster
+* Expose via LB
+
+Thursday:
+* Powerpoint
+* Pair programming exercise
