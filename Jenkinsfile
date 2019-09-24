@@ -12,12 +12,13 @@ pipeline {
         }
         stage('Test') {
             steps {
+                echo "Testing"
                 //sh "rake test RAILS_ENV=development"
             }
         }
         stage('Deploy') {
             steps {
-                //echo 'Deploying....'
+                echo 'Deploying....'
             }
         }
     }
