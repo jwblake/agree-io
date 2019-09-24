@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'bundle install'
+                sh 'rvm install "ruby-2.1.0"'
+                sh 'bundle install --verbose'
             }
         }
         stage('Test') {
