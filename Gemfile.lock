@@ -186,3 +186,9 @@ DEPENDENCIES
   turbolinks
   uglifier
   unicorn
+
+RUBY VERSION
+   ruby 2.1.0p0
+
+BUNDLED WITH
+   1.17.3
