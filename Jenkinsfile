@@ -1,6 +1,6 @@
 pipeline {
     agent { 
-        docker { image 'node:7-alpine' }
+        docker { image 'ruby:2.1-wheezy' }
     }
 
     stages {
@@ -13,6 +13,11 @@ pipeline {
             steps {
                 echo "Testing"
                 sh "rake test RAILS_ENV=development"
+            }
+        }
+        stage('Sonar Scan') {
+            steps {
+                echo "Scanning"
             }
         }
         stage('Deploy') {

@@ -1,4 +1,4 @@
-FROM ruby:2.1.0-slim
+FROM ruby:2.1-wheezy
 MAINTAINER Jonathan Blake <jona.wayne.blake@gmail.com>
 
 # Install dependencies:
