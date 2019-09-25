@@ -1,6 +1,6 @@
 pipeline {
     agent { 
-        docker { image 'ruby:2.1-wheezy' }
+        docker { image '554386539706.dkr.ecr.us-east-1.amazonaws.com/ruby-2.1:latest' }
     }
 
     stages {
