@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Building..."
+                echo "Installing Pre-Requisites"
+                sh 'yum install postgresql-devel'
                 sh 'bundle install'
             }
         }
