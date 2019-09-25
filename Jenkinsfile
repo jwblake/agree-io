@@ -2,10 +2,8 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Install Gems') {
             steps {
-                echo "Installing Pre-Requisites"
-                sh 'yum install postgresql-devel'
                 sh 'bundle install'
             }
         }
