@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building..."
-                sh 'bundle install --verbose'
+                sh 'bundle install'
             }
         }
         stage('Test') {
