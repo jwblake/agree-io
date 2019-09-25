@@ -5,8 +5,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building..."
-                sh 'rvm install "ruby-2.1.0"'
-                sh 'which ruby'
                 sh 'bundle install --verbose'
             }
         }
