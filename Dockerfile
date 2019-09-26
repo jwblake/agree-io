@@ -4,7 +4,6 @@ ADD . /app
 
 WORKDIR /app
 RUN bundle install
-RUN rake db:migrate RAILS_ENV=development
 
 EXPOSE 3000
 

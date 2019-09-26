@@ -48,6 +48,8 @@ pipeline {
             steps {
                 echo 'Deploying....'
                 sh 'docker build -t agree-io:latest .'
+                sh 'docker tag agree-io:latest ${registry}/agree-io:latest'
+                sh 'docker push ${registry}/agree-io:latest'
             }
         }
     }
