@@ -18,14 +18,12 @@ pipeline {
             agent { 
                 docker { 
                     alwaysPull true
-                    image '554386539706.dkr.ecr.us-east-1.amazonaws.com/ruby-2.1:latest' 
+                    image '${registry}/ruby-2.1:latest' 
                     args '-u root:root'
                 }
             }
             steps {
                 script {
-                    sh 'whoami'
-                    sh 'pwd'
                     sh 'bundle install'
                 }
             }
