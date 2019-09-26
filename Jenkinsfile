@@ -19,7 +19,7 @@ pipeline {
                 docker { 
                     alwaysPull true
                     image '${registry}/ruby-2.1:latest' 
-                    args '-u root:root -e POSTGRESQL_USER=docker  -e POSTGRESQL_PASSWORD=docker -e POSTGRESQL_DATABASE=agree"
+                    args '-u root:root -e POSTGRESQL_USER=docker  -e POSTGRESQL_PASSWORD=docker -e POSTGRESQL_DATABASE=agree'
                 }
             }
             stages {
