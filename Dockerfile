@@ -1,3 +1,10 @@
 FROM 554386539706.dkr.ecr.us-east-1.amazonaws.com/ruby-2.1:latest
-MAINTAINER Jonathan Blake <jona.wayne.blake@gmail.com>
 
+ADD . /app
+
+WORKDIR /app
+RUN bundle install
+
+EXPOSE 5432
+
+CMD ["/bin/bash", "/start_postgres.sh"]
