@@ -28,9 +28,9 @@ test:
   encoding: unicode
   database: agree
   pool: 5
-  username: docker
-  password: docker
-  host: 0.0.0.0
+  username: postgres
+  password: postgres!QAZxsw2
+  host: agree-test-db.cbuosfce76uv.us-east-1.rds.amazonaws.com
   port: 5432
 
 production:
