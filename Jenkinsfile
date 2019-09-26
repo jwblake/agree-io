@@ -34,6 +34,7 @@ pipeline {
                     steps {
                         script {
                             sh "su - postgres /usr/local/bin/postgresql.sh &"
+                            sh "rake db:create db:migrate"
                             sh "rake test RAILS_ENV=development"
                         }
                     }
