@@ -14,14 +14,14 @@ pipeline {
                 }
             }
         }
-        stage('Install Gems') {
-            agent { 
-                docker { 
-                    alwaysPull true
-                    image '${registry}/ruby-2.1:latest' 
-                    args '-u root:root'
-                }
+        agent { 
+            docker { 
+                alwaysPull true
+                image '${registry}/ruby-2.1:latest' 
+                args '-u root:root'
             }
+        }
+        stage('Install Gems') {
             steps {
                 script {
                     sh 'bundle install'
