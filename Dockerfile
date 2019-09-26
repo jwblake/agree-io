@@ -7,4 +7,4 @@ RUN bundle install
 
 EXPOSE 3000
 
-CMD ["rails", "server"]
+ENTRYPOINT ["rails", "server"]
