@@ -13,12 +13,32 @@
 # gem 'pg'
 #
 
-default:
+development:
   adapter: postgresql
   encoding: unicode
   database: agree
   pool: 5
-  username: <%= ENV['DB_USERNAME'] %> #docker
-  password: <%= ENV['DB_PASSWORD'] %> #docker
-  host: <%= ENV['DB_HOST'] %> # localhost
+  username: docker
+  password: docker
+  host: localhost
+  port: 5432
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: agree
+  pool: 5
+  username: docker
+  password: docker
+  host: 13.13.13.3
+  port: 5432
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: agree
+  pool: 5
+  username: docker
+  password: docker
+  host: localhost
   port: 5432
