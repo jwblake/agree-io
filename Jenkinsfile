@@ -34,7 +34,11 @@ pipeline {
                     steps {
                         script {
                             sh "/start_postgres.sh &"
-                            sh "rake test RAILS_ENV=development"
+                            try {
+                                sh "rake test RAILS_ENV=development"
+                            } catch (err) {
+                                currentBuild.result = 'UNSTABLE'
+                            }
                         }
                     }
                 }
