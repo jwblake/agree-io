@@ -9,13 +9,13 @@ Agree.io: it's like shaking hands.
 
 == Local Setup
 
-Install RVM
-Install Ruby
-Set up the PostgreSQL Docker container with the following command:
-docker run --rm --name pg-docker -e POSTGRES_USER=docker -e POSTGRES_PASSWORD=docker -e POSTGRES_DB=agree -d -p 5432:5432 postgres
+* Install RVM
+* Install Ruby
+* Set up the PostgreSQL Docker container with the following command:
+* docker run --rm --name pg-docker -e POSTGRES_USER=docker -e POSTGRES_PASSWORD=docker -e POSTGRES_DB=agree -d -p 5432:5432 postgres
 
-Migrate the DB with Rake
-rake db:migrate RAILS_ENV=development
+* Migrate the DB with Rake
+* rake db:migrate RAILS_ENV=development
 
 Run Application
 rails server
