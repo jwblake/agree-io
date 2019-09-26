@@ -30,7 +30,7 @@ test:
   pool: 5
   username: docker
   password: docker
-  host: 13.13.13.3
+  host: 0.0.0.0
   port: 5432
 
 production:
