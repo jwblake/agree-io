@@ -17,9 +17,9 @@ spec:
       containers:
       - name: agree-io
         image: 554386539706.dkr.ecr.us-east-1.amazonaws.com/agree-io:latest
+        imagePullPolicy: Always
         env:
         - name: RAILS_ENV
           value: "test"
         ports:
         - containerPort: 3000
-        imagePullPolicy: Always
