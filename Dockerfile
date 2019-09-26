@@ -4,7 +4,8 @@ ADD . /app
 
 WORKDIR /app
 RUN bundle install
+RUN rake db:migrate RAILS_ENV=development
 
-EXPOSE 5432
+EXPOSE 3000
 
-CMD ["/bin/bash", "/start_postgres.sh"]
+CMD ["rails", "server"]
