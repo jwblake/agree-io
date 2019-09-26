@@ -52,5 +52,15 @@ pipeline {
                 sh 'docker push ${registry}/agree-io:latest'
             }
         }
+        stage('K8 Deploy') {
+            agent {
+                docker {
+                    image 'bitnami/kubectl:1.15'
+                }
+            }
+            steps {
+                sh "K8 Deploy..."
+            }
+        }
     }
 }
