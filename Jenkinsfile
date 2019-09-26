@@ -14,7 +14,7 @@ pipeline {
                 }
             }
         }
-        stage('Install Gems') {
+        stage('Ruby Build') {
             agent { 
                 docker { 
                     alwaysPull true
@@ -22,22 +22,21 @@ pipeline {
                     args '-u root:root'
                 }
             }
-            steps {
-                script {
-                    sh 'bundle install'
+            stages {
+                stage ("Bundle Install") {
+                    steps {
+                        script {
+                            sh 'bundle install'
+                        }
+                    }
                 }
-            }
-        }
-        stage('Test') {
-            agent { 
-                docker { 
-                    image '${registry}/ruby-2.1:latest' 
-                    args '-u root:root'
+                stage ("Test") {
+                    steps {
+                        script {
+                            sh "rake test RAILS_ENV=development"
+                        }
+                    }
                 }
-            }
-            steps {
-                echo "Testing"
-                sh "rake test RAILS_ENV=development"
             }
         }
         stage('Sonar Scan') {
