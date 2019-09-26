@@ -55,7 +55,8 @@ pipeline {
         stage('K8 Deploy') {
             steps {
                 withKubeConfig(credentialsId: 'kubeconfig-test', serverUrl: 'https://F988378660836019AB991E33A2BD817C.gr7.us-east-1.eks.amazonaws.com') {
-                    sh "K8 Deploy..."
+                    echo "K8 Deploy..."
+                    sh 'kubectl apply -f kubernetes'
                 }
             }
         }
