@@ -14,10 +14,11 @@ spec:
       labels:
         app: agree-io
     spec:
+      terminationGracePeriodSeconds: 30
       containers:
       - name: agree-io
         image: 554386539706.dkr.ecr.us-east-1.amazonaws.com/agree-io:latest
-        imagePullPolicy: Always
+        imagePullPolicy: "Always"
         env:
         - name: RAILS_ENV
           value: "test"
