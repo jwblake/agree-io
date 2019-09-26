@@ -18,7 +18,7 @@ pipeline {
             agent { 
                 docker { 
                     alwaysPull true
-                    image '${registry}/ruby-2.1:latest' 
+                    image '${registry}/ruby-2.1-postgres:latest' 
                     args '-u root:root -e POSTGRESQL_USER=docker  -e POSTGRESQL_PASSWORD=docker -e POSTGRESQL_DATABASE=agree'
                 }
             }
@@ -44,14 +44,10 @@ pipeline {
                 }
             }
         }
-        stage('Sonar Scan') {
-            steps {
-                echo "Scanning"
-            }
-        }
-        stage('Deploy') {
+        stage('Deploy Docker') {
             steps {
                 echo 'Deploying....'
+                sh 'docker build -t agree-io:latest .'
             }
         }
     }
