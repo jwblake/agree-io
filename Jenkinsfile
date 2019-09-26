@@ -1,6 +1,19 @@
 pipeline {
     agent none
+    environment {
+        registry = '554386539706.dkr.ecr.us-east-1.amazonaws.com/ruby-2.1:latest'
+    }
     stages {
+        stage("ECR Login") {
+            steps {
+                withAWS(credentials:'aws-credential') {
+                    script {
+                        def login = ecrLogin()
+                        sh "${login}"
+                    }
+                }
+            }
+        }
         stage('Install Gems') {
             agent { 
                 docker { 
