@@ -1,7 +1,7 @@
 pipeline {
-    agent none
+    agent any
     environment {
-        registry = '554386539706.dkr.ecr.us-east-1.amazonaws.com/ruby-2.1:latest'
+        registry = '554386539706.dkr.ecr.us-east-1.amazonaws.com'
     }
     stages {
         stage("ECR Login") {
