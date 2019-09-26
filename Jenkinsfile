@@ -14,14 +14,14 @@ pipeline {
                 }
             }
         }
-        agent { 
-            docker { 
-                alwaysPull true
-                image '${registry}/ruby-2.1:latest' 
-                args '-u root:root'
-            }
-        }
         stage('Install Gems') {
+            agent { 
+                docker { 
+                    alwaysPull true
+                    image '${registry}/ruby-2.1:latest' 
+                    args '-u root:root'
+                }
+            }
             steps {
                 script {
                     sh 'bundle install'
@@ -29,6 +29,12 @@ pipeline {
             }
         }
         stage('Test') {
+            agent { 
+                docker { 
+                    image '${registry}/ruby-2.1:latest' 
+                    args '-u root:root'
+                }
+            }
             steps {
                 echo "Testing"
                 sh "rake test RAILS_ENV=development"
