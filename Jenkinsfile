@@ -33,7 +33,7 @@ pipeline {
                 stage ("Test") {
                     steps {
                         script {
-                            sh "/postgresql.sh &"
+                            sh "/start_postgres.sh &"
                             sh "rake test RAILS_ENV=development"
                         }
                     }
