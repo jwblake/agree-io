@@ -13,7 +13,7 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-twitter'
 gem 'google-analytics-rails'
 
-group :development do
+group :development, :test, :production do
   gem 'dotenv-rails'
 end
 
