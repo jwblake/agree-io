@@ -1,7 +1,7 @@
 pipeline {
     parameters {
         string(name: 'Version', defaultValue: '1.0.0', description: 'Three-Digit Version Number')
-        choice(name: 'Environment', defaultValue: 'test', description: 'Deploy Environment', choices: ['test'])
+        choice(name: 'Environment', description: 'Deploy Environment', choices: ['test'])
     }
     agent any
     environment {
