@@ -1,7 +1,7 @@
 pipeline {
     parameters {
-        string(name: 'Version', defaultValue: '1.0.0', description: 'Three-Digit Version Number')
-        choice(name: 'Environment', description: 'Deploy Environment', choices: ['test'])
+        string(name: 'VERSION', defaultValue: '1.0.0', description: 'Three-Digit Version Number')
+        choice(name: 'ENVIRONMENT', description: 'Deploy Environment', choices: ['test'])
     }
     agent any
     environment {
@@ -60,9 +60,9 @@ pipeline {
             steps {
                 withKubeConfig(credentialsId: 'kubeconfig-test', serverUrl: 'https://F988378660836019AB991E33A2BD817C.gr7.us-east-1.eks.amazonaws.com') {
                     echo "K8 Deploy..."
-                    sh "sed -i 's;${params.VERSION};{VERSION};g' kubernetes/deployment.yml"
-                    sh "sed -i 's;${params.ENVIRONMENT};{ENVIRONMENT};g' kubernetes/deployment.yml"
-                    sh "cat deployment.yml"
+                    sh "sed -i 's;${VERSION};{VERSION};g' kubernetes/deployment.yml"
+                    sh "sed -i 's;${ENVIRONMENT};{ENVIRONMENT};g' kubernetes/deployment.yml"
+                    sh "cat kubernetes/deployment.yml"
                     sh "kubectl apply -f kubernetes"
                 }
             }
