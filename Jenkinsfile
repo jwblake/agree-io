@@ -63,7 +63,6 @@ pipeline {
                     sh "sed -i 's;${params.VERSION};{VERSION};g' kubernetes/deployment.yml"
                     sh "sed -i 's;${params.ENVIRONMENT};{ENVIRONMENT};g' kubernetes/deployment.yml"
                     sh "kubectl apply -f kubernetes"
-                    '''
                 }
             }
         }
