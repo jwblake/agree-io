@@ -17,8 +17,8 @@ Agree.io: it's like shaking hands.
 * Migrate the DB with Rake
 * rake db:migrate RAILS_ENV=development
 
-Run Application
-rails server
+* Run Application
+* rails server
 
 == TO DO
 
@@ -42,7 +42,3 @@ Tuesday:
 * Deploy K8s Cluster via Terraform
 * Deploy application to K8s cluster
 * Expose via LB
-
-Wednesday:
-* Powerpoint
-* Pair programming exercise
