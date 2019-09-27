@@ -1,4 +1,8 @@
 pipeline {
+    parameters {
+        string(name: 'Version', defaultValue: '1.0.0', description: 'Three-Digit Version Number')
+        choice(name: 'Environment', defaultValue: 'test', description: 'Deploy Environment', choices: ['test'])
+    }
     agent any
     environment {
         registry = '554386539706.dkr.ecr.us-east-1.amazonaws.com'
