@@ -60,11 +60,11 @@ pipeline {
             steps {
                 withKubeConfig(credentialsId: 'kubeconfig-test', serverUrl: 'https://F988378660836019AB991E33A2BD817C.gr7.us-east-1.eks.amazonaws.com') {
                     echo "K8 Deploy..."
-                    sh """
-                        K8S_VARS='${params.VERSION}:${params.ENVIRONMENT}'
-                        envsubst '$K8S_VARS' <deployment.yaml >deployment.yaml
+                    sh '''
+                        sed -i "s;${params.VERSION};$VERSION;g" kubernetes/deployment.yml
+                        sed -i "s;${params.ENVIRONMENT};$ENVIRONMENT;g" kubernetes/deployment.yml
                         kubectl apply -f kubernetes
-                    """
+                    '''
                 }
             }
         }

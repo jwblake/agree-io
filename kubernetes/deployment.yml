@@ -17,11 +17,11 @@ spec:
       terminationGracePeriodSeconds: 30
       containers:
       - name: agree-io
-        image: 554386539706.dkr.ecr.us-east-1.amazonaws.com/agree-io:${VERSION}
+        image: 554386539706.dkr.ecr.us-east-1.amazonaws.com/agree-io:$VERSION
         imagePullPolicy: "Always"
         env:
         - name: RAILS_ENV
-          value: ${ENVIRONMENT}
+          value: $ENVIRONMENT
         ports:
         - containerPort: 3000
         readinessProbe:
